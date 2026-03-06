@@ -1,0 +1,11 @@
+# Binários e Build
+dist/
+Pomodoro
+*.app
+.DS_Store
+
+# Swift
+.build/
+Packages/
+Package.resolved
+.swiftpm/
