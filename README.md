@@ -1,50 +1,56 @@
 # 🍅 PomoGlass
 
-**PomoGlass** é um timer Pomodoro focado em produtividade, minimalismo e estética. Inspirado na linguagem visual do iOS, ele vive silenciosamente na sua barra de menus do macOS, ajudando você a manter o foco sem interrupções desnecessárias.
+**PomoGlass** is a premium, minimalist Pomodoro timer for macOS that lives entirely in your menu bar. Built with SwiftUI and inspired by iOS design aesthetics, it helps you maintain deep focus without unnecessary distractions.
 
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 ![Platform](https://img.shields.io/badge/platform-macOS-lightgrey.svg)
 ![Swift](https://img.shields.io/badge/swift-6.0-orange.svg)
 
-## ✨ Funcionalidades
+## ✨ Features
 
-- **100% Menu Bar:** Sem ícones no Dock ou janelas perdidas.
-- **Design iOS Style:** Interface com Glassmorphism, bordas arredondadas e anel de progresso dinâmico.
-- **Interação Rápida:** 1-Clique para iniciar/pausar.
-- **Notificações Nativas:** Receba alertas sonoros e visuais quando sua sessão terminar.
-- **Modos Pré-definidos:** Alternância rápida entre Foco (25min) e Pausa Curta (5min).
+- **100% Menu Bar:** No Dock icon or cluttered windows.
+- **Modern iOS Aesthetics:** Glassmorphism interface with smooth animations and dynamic gradients.
+- **Customizable Views:** Choose between **Digital**, **Circular Ring**, or **Battery Drain** visualization.
+- **Multilingual Support:** Fully translated into **English**, **Portuguese**, and **Spanish**.
+- **Adjustable Themes:** Multiple gradient presets (Sunset, Forest, Ocean, Purple).
+- **Smooth Audio Alerts:** Selectable "soft" sounds for session completion (Glass, Submarine, Tink, etc.).
+- **Smart Toggle:** One-click to start/pause focus sessions.
+- **Privacy First:** Native macOS notifications for focus alerts.
 
-## 🚀 Como Executar (Desenvolvimento)
+## 🚀 Getting Started
 
-Para rodar o projeto localmente sem o Xcode:
+To run PomoGlass locally:
 
-1. Clone o repositório.
-2. Execute o script de build para gerar o bundle `.app`:
+1. Clone the repository.
+2. Run the build script to generate the `.app` bundle:
    ```bash
    chmod +x build.sh
    ./build.sh
    ```
-3. O aplicativo estará na pasta `dist/PomoGlass.app`.
+3. Open the application from the `dist/` folder:
+   ```bash
+   open dist/PomoGlass.app
+   ```
 
-## 🛠 Tech Stack
+## 🛠 Tech Stack & Architecture
 
-- **Linguagem:** Swift 6
-- **Framework:** SwiftUI (Interface) & AppKit (Menu Bar Controller)
-- **Engine:** UserNotifications para alertas nativos.
+- **Language:** Swift 6
+- **Framework:** SwiftUI & AppKit
+- **Architecture:** MVVM (Model-View-ViewModel) for clean state management.
+- **System APIs:** UserNotifications & NSSound for native macOS experience.
 
-## 🤝 Contribuindo
+## 🤝 Contributing & Developer
 
-Contribuições são o que fazem a comunidade open source um lugar incrível para aprender, inspirar e criar. Qualquer contribuição que você fizer será **muito apreciada**.
+Created and maintained with ❤️ by **Henrique Ribeiro** ([HenriqueRib](https://github.com/HenriqueRib)).
 
-1. Faça um Fork do projeto.
-2. Crie sua Feature Branch (`git checkout -b feature/AmazingFeature`).
-3. Commit suas mudanças (`git commit -m 'Add some AmazingFeature'`).
-4. Push para a Branch (`git push origin feature/AmazingFeature`).
-5. Abra um Pull Request.
+Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
-## 📄 Licença
+1. Fork the Project.
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`).
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`).
+4. Push to the Branch (`git push origin feature/AmazingFeature`).
+5. Open a Pull Request.
 
-Distribuído sob a licença MIT. Veja `LICENSE` para mais informações.
+## 📄 License
 
----
-Criado com ❤️ por [Seu Nome/Github]
+Distributed under the MIT License. See `LICENSE` for more information.
