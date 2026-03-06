@@ -317,7 +317,7 @@ struct SettingsView: View {
                     
                     SettingSection(title: state.t("color")) {
                         HStack {
-                            ForEach(0..<colorGradients.count) { index in
+                            ForEach(colorGradients.indices, id: \.self) { index in
                                 Circle()
                                     .fill(LinearGradient(colors: colorGradients[index].colors, startPoint: .top, endPoint: .bottom))
                                     .frame(width: 25, height: 25)
