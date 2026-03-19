@@ -1,0 +1,30 @@
+Criar um atalho global (ideal para seu app)
+
+Adicionar um global hotkey.
+
+Exemplo:
+
+⌘ + Shift + P
+
+para abrir o menu do pomodoro.
+
+Frameworks que fazem isso:
+
+MASShortcut
+
+HotKey
+
+KeyboardShortcuts
+
+Se seu app for:
+
+Swift / SwiftUI
+
+Você pode registrar:
+
+KeyboardShortcuts.onKeyUp(for: .togglePomodoro) {
+    toggleTimer()
+}
+
+
+Quero adiicionar um atalho para que possa abrir e navegar assim ativar ou pausar usando apenas o teclado ..  Importante ter em configuracao e no readme como fazer isso ..  1️⃣ Hotkey global ⌥ + P 2️⃣ Comandos CLI pomodoro start 2 . Como adicionei para buildar um executavel .. seria interresante ter um icon .. pode ser um emoticon mesmo o  de tempo 

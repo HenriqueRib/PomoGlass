@@ -16,5 +16,7 @@ struct PomodoroView: View {
         .padding(25)
         .background(VisualEffectView(material: .fullScreenUI, blendingMode: .withinWindow))
         .animation(.spring(response: 0.35, dampingFraction: 0.8), value: state.isSettingsOpen)
+        // Embed keyboard shortcut support so it is always active while the popover exists
+        KeyboardShortcutSupport(state: state)
     }
 }

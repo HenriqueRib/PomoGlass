@@ -32,6 +32,31 @@ To run PomoGlass locally:
    open dist/PomoGlass.app
    ```
 
+## 🧪 Running Tests
+
+PomoGlass includes a comprehensive unit test suite covering models, localization, and app state logic.
+
+To run all tests:
+
+```bash
+chmod +x test.sh
+./test.sh
+```
+
+Or using Swift Package Manager directly:
+
+```bash
+swift test
+```
+
+### Test Coverage
+
+The test suite includes:
+
+- **AppModelsTests**: Tests for `Language`, `TimerViewMode`, `NotificationSound`, and `AppColorGradient` models
+- **LocalizationServiceTests**: Tests for translations across all supported languages (English, Portuguese, Spanish)
+- **AppStateTests**: Tests for timer logic, formatting, progress calculation, and state management
+
 ## 🛠 Tech Stack & Architecture
 
 - **Language:** Swift 6
@@ -50,6 +75,31 @@ Contributions are what make the open-source community such an amazing place to l
 3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`).
 4. Push to the Branch (`git push origin feature/AmazingFeature`).
 5. Open a Pull Request.
+
+## 🔑 Hotkeys & CLI
+
+PomoGlass supports control via a small command-line helper and can be bound to a global keyboard shortcut using macOS Shortcuts/Automator.
+
+Install the helper (after running ./build.sh the helper will be inside the app bundle):
+
+1. Build the app: 
+   chmod +x build.sh && ./build.sh
+2. Create a symlink so the helper is on your PATH (adjust path if you moved the app):
+   sudo ln -s "$(pwd)/dist/PomoGlass.app/Contents/Helpers/pomodoro" /usr/local/bin/pomodoro
+
+Examples:
+- Start a 25 minute focus session: pomodoro start 25
+- Pause the timer: pomodoro pause
+- Toggle start/pause: pomodoro toggle
+- Reset to N minutes: pomodoro reset 10
+
+Binding a global hotkey (example using Shortcuts/Automator):
+1. Open the Shortcuts app and create a new Quick Action / Shortcut that runs a shell script.
+2. Use the command: /usr/local/bin/pomodoro toggle
+3. Assign the keyboard shortcut you want (e.g., ⌥+P) to the shortcut in Shortcuts preferences.
+
+Notes about permissions:
+- Mapping global hotkeys with system automation may require granting Shortcuts/Automator permissions in System Settings > Privacy & Security
 
 ## 📄 License
 
