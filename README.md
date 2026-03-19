@@ -32,6 +32,31 @@ To run PomoGlass locally:
    open dist/PomoGlass.app
    ```
 
+## 🧪 Running Tests
+
+PomoGlass includes a comprehensive unit test suite covering models, localization, and app state logic.
+
+To run all tests:
+
+```bash
+chmod +x test.sh
+./test.sh
+```
+
+Or using Swift Package Manager directly:
+
+```bash
+swift test
+```
+
+### Test Coverage
+
+The test suite includes:
+
+- **AppModelsTests**: Tests for `Language`, `TimerViewMode`, `NotificationSound`, and `AppColorGradient` models
+- **LocalizationServiceTests**: Tests for translations across all supported languages (English, Portuguese, Spanish)
+- **AppStateTests**: Tests for timer logic, formatting, progress calculation, and state management
+
 ## 🛠 Tech Stack & Architecture
 
 - **Language:** Swift 6
