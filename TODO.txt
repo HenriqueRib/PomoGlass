@@ -28,32 +28,3 @@ KeyboardShortcuts.onKeyUp(for: .togglePomodoro) {
 
 
 Quero adiicionar um atalho para que possa abrir e navegar assim ativar ou pausar usando apenas o teclado ..  Importante ter em configuracao e no readme como fazer isso ..  1️⃣ Hotkey global ⌥ + P 2️⃣ Comandos CLI pomodoro start 2 . Como adicionei para buildar um executavel .. seria interresante ter um icon .. pode ser um emoticon mesmo o  de tempo 
-
-
-Adicionar no Readme 
-
-
-## 🔑 Hotkeys & CLI
-
-PomoGlass supports control via a small command-line helper and can be bound to a global keyboard shortcut using macOS Shortcuts/Automator.
-
-Install the helper (after running ./build.sh the helper will be inside the app bundle):
-
-1. Build the app: 
-   chmod +x build.sh && ./build.sh
-2. Create a symlink so the helper is on your PATH (adjust path if you moved the app):
-   sudo ln -s "$(pwd)/dist/PomoGlass.app/Contents/Helpers/pomodoro" /usr/local/bin/pomodoro
-
-Examples:
-- Start a 25 minute focus session: pomodoro start 25
-- Pause the timer: pomodoro pause
-- Toggle start/pause: pomodoro toggle
-- Reset to N minutes: pomodoro reset 10
-
-Binding a global hotkey (example using Shortcuts/Automator):
-1. Open the Shortcuts app and create a new Quick Action / Shortcut that runs a shell script.
-2. Use the command: /usr/local/bin/pomodoro toggle
-3. Assign the keyboard shortcut you want (e.g., ⌥+P) to the shortcut in Shortcuts preferences.
-
-Notes about permissions:
-- Mapping global hotkeys with system automation may require granting Shortcuts/Automator permissions in System Settings > Privacy & Security.

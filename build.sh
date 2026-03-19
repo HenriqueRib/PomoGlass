@@ -10,12 +10,20 @@ echo "🔨 Iniciando Build do $APP_NAME..."
 rm -rf "$BUILD_DIR"
 mkdir -p "$BUILD_DIR/$APP_NAME.app/Contents/MacOS"
 mkdir -p "$BUILD_DIR/$APP_NAME.app/Contents/Resources"
+mkdir -p "$BUILD_DIR/$APP_NAME.app/Contents/Helpers"
 
 # Copiar Recursos (Localização, etc)
 cp -R PomoGlass/Resources/* "$BUILD_DIR/$APP_NAME.app/Contents/Resources/"
 
 # Compilar o código
 swiftc $(find PomoGlass -name "*.swift") -o "$BUILD_DIR/$APP_NAME.app/Contents/MacOS/$APP_NAME" -framework Cocoa -framework SwiftUI -framework UserNotifications
+
+# Compilar helper CLI e copiar para o bundle
+if [ -f Sources/cli/main.swift ]; then
+    echo "🔨 Compilando helper CLI..."
+    swiftc Sources/cli/main.swift -o "$BUILD_DIR/$APP_NAME.app/Contents/Helpers/pomodoro" -framework Foundation
+    chmod +x "$BUILD_DIR/$APP_NAME.app/Contents/Helpers/pomodoro"
+fi
 
 # Criar o Info.plist básico necessário para Notificações, Bundle ID e Localização
 cat > "$BUILD_DIR/$APP_NAME.app/Contents/Info.plist" <<EOF
@@ -49,3 +57,14 @@ EOF
 
 echo "✅ App criado com sucesso em $BUILD_DIR/$APP_NAME.app"
 echo "🚀 Para rodar: open $BUILD_DIR/$APP_NAME.app"
+
+DMG_NAME="$APP_NAME.dmg"
+
+echo "📦 Criando DMG..."
+
+hdiutil create -volname "$APP_NAME" \
+-srcfolder "$BUILD_DIR/$APP_NAME.app" \
+-ov -format UDZO \
+"$BUILD_DIR/$DMG_NAME"
+
+echo "✅ DMG criado em $BUILD_DIR/$DMG_NAME"
